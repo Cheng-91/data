@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Gallery</title>
+</head>
+<body>
+	<h1>color</h1>
+	<ul>
+		<li><a title="BLUE" href="images/blue.jpg" onclick="showPic(this); return false;">blue</a></li>
+		<li><a title="RED" href="images/red.jpg" onclick="showPic(this); return false;">red</a></li>
+		<li><a title="YELLOW" href="images/yellow.jpg" onclick="showPic(this); return false;">yellow</a></li>
+		<li><a title="GREEN" href="images/green.jpg" onclick="showPic(this); return false;">green</a></li>
+	</ul>
+	<img id="placeholder" src="images/placeholder.jpg" alt="what color do you like?">
+	<p id="description">Choose an image.</p>
+<script type="text/javascript">
+	function showPic(whichpic){
+		var source = whichpic.getAttribute("href");
+		var text = whichpic.getAttribute("title");
+		var placeholder = document.getElementById("placeholder");
+		var description = document.getElementById("description");
+		placeholder.setAttribute("src",source);
+		description.firstChild.nodeValue = text;
+	}
+
+/*
+nodeType:
+元素节点:1
+属性节点:2
+文本节点:3
+*/
+</script>	
+</body>
+</html>
